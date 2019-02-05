@@ -14,4 +14,4 @@ Minimum OS Version - The lowest version of iPhone OS that the device can be down
 iPhone 1337 Team
 u/randomNinja64 - Initial code.
 u/random_user_online - Idea for the program and information regarding iPhone 2G serial numbers.
-Other members of the team - Testing
+u/electimon - Naming and testing

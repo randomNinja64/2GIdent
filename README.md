@@ -2,7 +2,9 @@
 A tool to provide information about an iPhone 2G based on serial number.
 
 -Usage-
+
 Input the 11 digit serial number of an iPhone 2G into the prompt.
+
 
 -Output-
 
@@ -14,8 +16,14 @@ Original Bootloader Version - The version of the bootloader that the phone was s
 
 Minimum OS Version - The lowest version of iPhone OS that the device can be downgraded to
 
+
 -Credits-
+
 iPhone 1337 Team
+
 u/randomNinja64 - Initial code.
+
 u/random_user_online - Idea for the program and information regarding iPhone 2G serial numbers.
+
 u/electimon - Naming and testing
+

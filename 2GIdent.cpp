@@ -15,8 +15,7 @@ int productionWeek(char serialNumber[11]); //This function will return the produ
 int productionYear(char serialNumber[11]); //This function will return the production year of an iPhone
 float calcBL(int prodWeek, int prodYear); //This function wll return bootloader based on production week and year
 string calcMinOS(int prodWeek, int prodYear); //This function will return minimum OS version
-string prodWeekToDate(int prodWeek, int prodYear); //this function will convert production week and year to a date
-
+string prodWeekToMonth(int prodWeek); //this function will convert production week to month
 int main() {
 	char serialNumber[11] = { '0' }; //11 character long array to store iPhone 2G serial number
 	int prodWeek = 0; //Create an int to store production week
@@ -63,7 +62,7 @@ void displayInfo(char serialNumber[11], int prodWeek, int prodYear) { //This fun
 	}
 	else {
 		cout << "Production Week: " << prodWeek << "\n"; //print production week
-		cout << "Production Month / Year: " << prodWeekToDate(prodWeek,prodYear) << " " << prodYear << "\n"; //print production year
+		cout << "Production Month / Year: " << prodWeekToMonth(prodWeek) << " " << prodYear << "\n"; //print production year
 	}
 
 	cout << "Original Bootloader Version: " << calcBL(prodWeek, prodYear) << "\n";  //use calcBL to determine bootloader version
@@ -112,81 +111,44 @@ string calcMinOS(int prodWeek, int prodYear) { //This function will return minim
 	}
 }
 
-string prodWeekToDate(int prodWeek, int prodYear) { //this function will convert production week and year to a date
-	if (prodYear == 2007) {
-		if (prodWeek >= 1 && prodWeek <= 5) {
-			return "January";
-		}
-		if (prodWeek >= 6 && prodWeek <= 9) {
-			return "February";
-		}
-		if (prodWeek >= 10 && prodWeek <= 13) {
-			return "March";
-		}
-		if (prodWeek >= 14 && prodWeek <= 18) {
-			return "April";
-		}
-		if (prodWeek >= 19 && prodWeek <= 22) {
-			return "May";
-		}
-		if (prodWeek >= 23 && prodWeek <= 26) {
-			return "June";
-		}
-		if (prodWeek >= 27 && prodWeek <= 31) {
-			return "July";
-		}
-		if (prodWeek >= 32 && prodWeek <= 35) {
-			return "August";
-		}
-		if (prodWeek >= 36 && prodWeek <= 39) {
-			return "September";
-		}
-		if (prodWeek >= 40 && prodWeek <= 44) {
-			return "October";
-		}
-		if (prodWeek >= 45 && prodWeek <= 48) {
-			return "November";
-		}
-		if (prodWeek >= 49 && prodWeek <= 52) {
-			return "December";
-		}
+string prodWeekToMonth(int prodWeek) { //this function will convert production week to month
+	if (prodWeek <= 5) {
+		return "January";
+	}
+	if (prodWeek <= 9) {
+		return "February";
+	}
+	if (prodWeek <= 13) {
+		return "March";
+	}
+	if (prodWeek <= 18) {
+		return "April";
+	}
+	if (prodWeek <= 22) {
+		return "May";
+	}
+	if (prodWeek <= 26) {
+		return "June";
+	}
+	if (prodWeek <= 31) {
+		return "July";
+	}
+	if (prodWeek <= 35) {
+		return "August";
+	}
+	if (prodWeek <= 39) {
+		return "September";
+	}
+	if (prodWeek <= 44) {
+		return "October";
+	}
+	if (prodWeek <= 48) {
+		return "November";
+	}
+	if (prodWeek <= 52) {
+		return "December";
 	}
 	else {
-		if (prodWeek >= 1 && prodWeek <= 5) {
-			return "January";
-		}
-		if (prodWeek >= 6 && prodWeek <= 9) {
-			return "February";
-		}
-		if (prodWeek >= 10 && prodWeek <= 14) {
-			return "March";
-		}
-		if (prodWeek >= 15 && prodWeek <= 18) {
-			return "April";
-		}
-		if (prodWeek >= 19 && prodWeek <= 22) {
-			return "May";
-		}
-		if (prodWeek >= 23 && prodWeek <= 27) {
-			return "June";
-		}
-		if (prodWeek >= 28 && prodWeek <= 31) {
-			return "July";
-		}
-		if (prodWeek >= 32 && prodWeek <= 35) {
-			return "August";
-		}
-		if (prodWeek >= 36 && prodWeek <= 40) {
-			return "September";
-		}
-		if (prodWeek >= 41 && prodWeek <= 44) {
-			return "October";
-		}
-		if (prodWeek >= 45 && prodWeek <= 48) {
-			return "November";
-		}
-		if (prodWeek >= 49 && prodWeek <= 52) {
-			return "December";
-		}
+		return "Unknown";
 	}
 }
